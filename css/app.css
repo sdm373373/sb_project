@@ -1,0 +1,30 @@
+.panel-heading {
+    padding-bottom: 0;
+}
+
+.panel-body {
+    padding-top: 0;
+    margin-top: -20px;
+    overflow-x: auto;
+}
+
+.panel-body > .row {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.underline-row {
+    border-bottom: #ddd solid 1px; 
+    margin-left: 4px; 
+    margin-right: 4px;
+}
+
+.label-pill {
+  padding-right: .6em;
+  padding-left: .6em;
+  border-radius: 10rem;
+}
+
+.table {
+    margin-bottom: 0;
+}
