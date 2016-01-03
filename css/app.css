@@ -28,3 +28,15 @@
 .table {
     margin-bottom: 0;
 }
+
+.progress {
+    margin-bottom: 0;
+}
+
+.money {
+    color: #216C2A;
+}
+
+.popover{
+    max-width: 100%; 
+}

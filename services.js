@@ -21,6 +21,11 @@ angular.module('myApp.services', [])
             return $http.get('/api/last5days.php').then(function(result) {
                 return result.data;
             });
+        },
+        getBotStatus: function() {
+            return $http.get('/api/bot_status.php').then(function(result) {
+                return result.data;
+            });
         }
     };
   }
