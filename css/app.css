@@ -37,6 +37,12 @@
     color: #216C2A;
 }
 
-.popover{
+.popover {
     max-width: 100%; 
+}
+
+@media (max-width: 767px) {
+    .table-fixed {
+        table-layout: fixed;
+    }
 }
