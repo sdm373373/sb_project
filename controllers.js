@@ -21,9 +21,9 @@ angular.module('myApp.controllers', ['ngAnimate', 'ui.bootstrap'])
     $scope.botStatus = [];
     $scope.toggleDashboardText = false;
     
-      $scope.popover = {
-    templateUrl: 'botstatus.html',
-  };
+    $scope.popover = {
+        templateUrl: 'botstatus.html'
+    };
     
     $scope.getUsersDashboard = function(swagname) {
         for(var i = 0; i < $scope.dashboard.length; i++) {

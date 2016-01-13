@@ -74,13 +74,13 @@
                                 <strong>{{ dashboard | sumOfValue:'profit' | currency }}</strong>
                             </td>
                             <td class="text-right">
-                                <strong>Earned Bonus 1</strong>
+                                <strong>Bonus 1</strong>
                             </td>                            
                             <td class="text-right">
                                 <strong>{{ dashboard | sumDailyGoal:'swagbucks':'goal1':'bonus1' }}</strong>
                             </td>
                             <td class="text-right"> 
-                                <strong>Earned Bonus 2</strong>
+                                <strong>Bonus 2</strong>
                             </td>                            
                             <td class="text-right">
                                 <strong>{{ dashboard | sumDailyGoal:'swagbucks':'goal2':'bonus2' }}</strong>
@@ -99,7 +99,7 @@
             <div class="panel-heading" style='overflow-x: hidden;'>
                 <div style='margin-bottom: 4px;'>
                     <span class="glyphicon glyphicon-user" ng-class="((botStatus | filter: { swagname: user.swagname }) | sumOfValue:'online_status') === 3 ? 'text-success' : 'text-danger'" aria-hidden="true"
-                          uib-popover-template="popover.templateUrl" popover-placement="right" popover-append-to-body="true"></span>
+                          uib-popover-template="popover.templateUrl" popover-placement="right" popover-trigger="outsideClick" popover-append-to-body="true"></span>
                     <span class='lead' style='margin-left: 4px;'>{{ user.swagname}}</span>
                     <span class="label label-pill pull-right" ng-class="{'label-success' : user.current_swagbucks >= 2500, 'label-default' : user.current_swagbucks < 2500 }" style="margin-top: 4px;">{{ user.current_swagbucks }}</span>
                 </div>
