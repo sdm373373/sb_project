@@ -26,6 +26,11 @@ angular.module('myApp.services', [])
             return $http.get('/api/bot_status.php').then(function(result) {
                 return result.data;
             });
+        },
+        getProfitSummary: function() {
+            return $http.get('/api/profit_summary.php').then(function(result) {
+                return result.data;
+            });
         }
     };
   }

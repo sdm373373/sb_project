@@ -151,31 +151,31 @@
 </div>
 
 <script id="botstatus.html" type="text/ng-template">
-<div>
-    <div class="arrow"></div>
-    <div class="popover-inner">
-        <h3 class="popover-title"><strong>{{ user.swagname }} Online Status</strong></h3>
-        <div class="popover-content">
-            <table class='table table-condensed table-responsive table-fixed'>
-                <thead>
-                    <tr>
-                        <th style="width: 200px; overflow-x: auto;">Script</th>
-                        <th class="text-right">Last Response (min)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="row in botStatus | filter: { swagname: user.swagname }"
-                        ng-class="{'success' : row.online_status == 1, 'danger' : row.online_status == 0 }">
-                        <td style="width: 200px; overflow-x: auto;">
-                            {{ row.script }}
-                        </td>
-                        <td class="text-right">
-                            {{ row.time_diff }}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>             
+    <div>
+        <div class="arrow"></div>
+        <div class="popover-inner">
+            <h3 class="popover-title"><strong>{{ user.swagname }} Online Status</strong></h3>
+            <div class="popover-content">
+                <table class='table table-condensed table-responsive table-fixed'>
+                    <thead>
+                        <tr>
+                            <th style="width: 200px; overflow-x: auto;">Script</th>
+                            <th class="text-right">Last Response (min)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in botStatus | filter: { swagname: user.swagname }"
+                            ng-class="{'success' : row.online_status == 1, 'danger' : row.online_status == 0 }">
+                            <td style="width: 200px; overflow-x: auto;">
+                                {{ row.script }}
+                            </td>
+                            <td class="text-right">
+                                {{ row.time_diff }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>             
+            </div>
         </div>
     </div>
-</div>
 </script>

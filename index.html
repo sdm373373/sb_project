@@ -15,12 +15,14 @@
         <link rel="stylesheet" type="text/css" href="css/theme.css">
         <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lato'>
         <link rel="stylesheet" type="text/css" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-grid/ui-grid.min.css">
         
         <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
         <script src="app.js"></script>
         <script src="services.js"></script>
         <script src="routes.js"></script>
@@ -32,9 +34,9 @@
 
         <ul ng-controller="NavBarCtrl" class="nav nav-pills header">
             <li ng-class="{'active': activePage.indexOf('/today') > -1}"><a href="#/today">Today</a></li>
-            <li ng-class="{'active': activePage.indexOf('/week') > -1}"><a href="#/week">This Week</a></li>
-            <li ng-class="{'active': activePage.indexOf('/month') > -1}"><a href="#/month">This Month</a></li>
-            <li ng-class="{'active': activePage.indexOf('/year') > -1}"><a href="#/year">This Year</a></li>
+            <li ng-class="{'active': activePage.indexOf('/week') > -1}"><a href="#/week">Weekly</a></li>
+            <li ng-class="{'active': activePage.indexOf('/month') > -1}"><a href="#/month">Monthly</a></li>
+            <li ng-class="{'active': activePage.indexOf('/year') > -1}"><a href="#/year">Yearly</a></li>
         </ul>
 
         <!--[if lt IE 7]>

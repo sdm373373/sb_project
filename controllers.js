@@ -2,7 +2,7 @@
 
 'use strict';
 
-angular.module('myApp.controllers', ['ngAnimate', 'ui.bootstrap'])
+angular.module('myApp.controllers', ['ngAnimate', 'ui.bootstrap', 'ui.grid', 'ui.grid.grouping'])
 
 
 .controller('NavBarCtrl', ['$rootScope', '$scope', '$location', function($rootScope, $scope, $location) {
@@ -73,8 +73,39 @@ angular.module('myApp.controllers', ['ngAnimate', 'ui.bootstrap'])
     $scope.getBotStatus();
 }])
 
-.controller('WeekCtrl', ['$scope', 'Services', function($scope, Services) {
-
+.controller('WeekCtrl', ['$scope', 'Services', 'uiGridGroupingConstants', function($scope, Services, uiGridGroupingConstants) {
+    $scope.gridOptions = {
+        enableFiltering: true,
+        treeRowHeaderAlwaysVisible: false,
+        columnDefs: [            
+            { name: 'year', type: 'number', minWidth: '100', width: '10%', grouping: { groupPriority: 0 }, sort: { priority: 0, direction: 'desc' } },
+            { name: 'month', type: 'number', minWidth: '100', width: '10%', grouping: { groupPriority: 1 }, sort: { priority: 1, direction: 'desc' } },
+            { name: 'week', type: 'number', minWidth: '100', width: '10%', grouping: { groupPriority: 2 }, sort: { priority: 3, direction: 'desc' } },
+            { name: 'date', minWidth: '100', width: '10%', type: 'date', cellFilter: 'date' },
+            { name: 'swagbucks', minWidth: '200', width: '30%', treeAggregationType: uiGridGroupingConstants.aggregation.SUM,
+                customTreeAggregationFinalizerFn: function( aggregation ) {
+                    aggregation.rendered = aggregation.value;
+                } 
+            },
+            { name: 'profit', minWidth: '200', width: '30%', cellFilter: 'currency', treeAggregationType: uiGridGroupingConstants.aggregation.SUM,
+                customTreeAggregationFinalizerFn: function( aggregation ) {
+                    aggregation.rendered = aggregation.value;
+                } 
+            } 
+        ],
+        onRegisterApi: function( gridApi ) {
+            $scope.gridApi = gridApi;
+        }
+    };
+    
+    $scope.getProfitSummary = function() {
+        return Services.getProfitSummary().then(function(result) {
+            if(result.success)
+                $scope.gridOptions.data = result.data;
+        });
+    }; 
+    
+    $scope.getProfitSummary();
 }])
 
 .controller('MonthCtrl', ['$scope', 'Services', function($scope, Services) {
