@@ -73,7 +73,7 @@ angular.module('myApp.controllers', ['ngAnimate', 'ui.bootstrap', 'ui.grid', 'ui
     $scope.getBotStatus();
 }])
 
-.controller('WeekCtrl', ['$scope', 'Services', 'uiGridGroupingConstants', function($scope, Services, uiGridGroupingConstants) {
+.controller('HistoryCtrl', ['$scope', 'Services', 'uiGridGroupingConstants', function($scope, Services, uiGridGroupingConstants) {
     $scope.gridOptions = {
         enableFiltering: true,
         treeRowHeaderAlwaysVisible: false,
@@ -106,14 +106,6 @@ angular.module('myApp.controllers', ['ngAnimate', 'ui.bootstrap', 'ui.grid', 'ui
     }; 
     
     $scope.getProfitSummary();
-}])
-
-.controller('MonthCtrl', ['$scope', 'Services', function($scope, Services) {
-
-}])
-
-.controller('YearCtrl', ['$scope', 'Services', function($scope, Services) {
-
 }])
 
 ;

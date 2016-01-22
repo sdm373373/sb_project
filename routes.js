@@ -8,17 +8,9 @@ angular.module('myApp.routes', ['ngRoute'])
         templateUrl: 'views/today.html',
         controller: 'TodayCtrl'
     })
-    .when('/week', {
-        templateUrl: 'views/week.html',
-        controller: 'WeekCtrl'
-    })
-    .when('/month', {
-        templateUrl: 'views/month.html',
-        controller: 'MonthCtrl'
-    })
-    .when('/year', {
-        templateUrl: 'views/year.html',
-        controller: 'YearCtrl'
+    .when('/history', {
+        templateUrl: 'views/history.html',
+        controller: 'HistoryCtrl'
     })
     
     .otherwise({ redirectTo: '/today' });
